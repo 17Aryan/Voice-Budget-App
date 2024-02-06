@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://unpkg.com/annyang@2.6.0/dist/annyang.min.js"></script>
     <script>
     $(document).ready(function() {
       $('#product_table').DataTable( {
@@ -278,6 +279,20 @@
           xmlHttp.send( null );
           return xmlHttp.responseText;
        }
+       if (annyang) {
+  	annyang.addCommands({
+    		'update budget': updateBudget,
+    		'save budget': saveBudget,
+    		'update food': updateFood,
+    		'save food': saveFood,
+		'update clothes':updateClothes,
+		'save clothes':saveClothes,
+		'update rent':updateRent,
+		'save rent':saveRent,
+		'update miscellaneous':updateMiscellaneous,
+		'save miscellaneous':saveMiscellaneous
+  	});
+
        function update_budget()
        {
           var val=document.getElementById("budget_label").textContent;
